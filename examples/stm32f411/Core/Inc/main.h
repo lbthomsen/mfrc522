@@ -64,6 +64,8 @@ void Error_Handler(void);
 #define SPI1_INT_Pin GPIO_PIN_0
 #define SPI1_INT_GPIO_Port GPIOB
 #define SPI1_INT_EXTI_IRQn EXTI0_IRQn
+#define SPI1_RST_Pin GPIO_PIN_1
+#define SPI1_RST_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 #ifdef DEBUG
