@@ -13,6 +13,12 @@
 #include "stdio.h"
 #endif
 
+/*
+ * --------------------------
+ * Hardware related functions
+ * --------------------------
+ */
+
 /**
  * @brief	Switch CS (Chip Select) on - active low
  * @param	MFRC522 handle
@@ -80,6 +86,12 @@ MFRC522_result_t mfrc522_read(MFRC522_HandleTypeDef *mfrc522, unsigned char addr
 
     return result;
 }
+
+/*
+ * -----------------
+ * Generic functions
+ * -----------------
+ */
 
 /**
  * @brief   Set MFRC522 register bit
@@ -201,6 +213,8 @@ MFRC522_result_t mfrc522_init(MFRC522_HandleTypeDef *mfrc522, SPI_HandleTypeDef 
     mfrc522_antenna_on(mfrc522);
 
     mfrc522_read(mfrc522, VersionReg, &val, 1);
+
+    MFRC_DBG("Ver = 0x%x", val);
 
     return result;
 
